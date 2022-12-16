@@ -20,12 +20,12 @@ console.log(`Function formats the name by capitalizing the first letter: ${getFi
 
 // ----------------------------------------------------------------------------------------------------------------------------------
 // 4.Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати. (Податок = 18% + 1.5% -> 19.5%). Приклад: 1000 -> 805
-function getsalaryAfterTax(a) {
+function getSalaryAfterTax(a) {
     let result = a - ((a / 100 * 19.5));
     return result;
 }
 
-console.log(`Function deducts the amount remaining after paying the tax: ${getsalaryAfterTax(2000)}`);
+console.log(`Function deducts the amount remaining after paying the tax: ${getSalaryAfterTax(2000)}`);
 
 // --------------------------------------------------------------------------------------------------------------------
 // 5.Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M. Приклад: getRandomNumber(1, 10) -> 5
