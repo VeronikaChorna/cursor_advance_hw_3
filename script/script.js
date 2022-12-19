@@ -6,8 +6,6 @@ function getMaxDigit(n) {
   return result;
 }
 
-console.log(`The function receives the largest number in this number: ${getMaxDigit(6870)}`);
-
 // -----------------------------------------------------------------------------------------------------
 // 2.Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **. Використовуйте цикл
 function getNumberPow(x, n) {
@@ -18,15 +16,11 @@ function getNumberPow(x, n) {
     return result;
   }
 
-  console.log(`Function determines the power of a number: ${getNumberPow(3, 3)}`);
-
 //------------------------------------------------------------------------------------------------------------------
 // 3.Створити функцію, яка форматує ім'я, роблячи першу букву великою. ("влад" -> "Влад", "вЛАД" -> "Влад" і так далі);
 function getFirstLetterUpperCase(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
-
-console.log(`Function formats the name by capitalizing the first letter: ${getFirstLetterUpperCase('cHARacTer')}`);
 
 // ----------------------------------------------------------------------------------------------------------------------------------
 // 4.Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати. (Податок = 18% + 1.5% -> 19.5%). Приклад: 1000 -> 805
@@ -35,19 +29,15 @@ function getSalaryAfterTax(a) {
     return result;
 }
 
-console.log(`Function deducts the amount remaining after paying the tax: ${getSalaryAfterTax(2000)}`);
-
 // --------------------------------------------------------------------------------------------------------------------
 // 5.Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M. Приклад: getRandomNumber(1, 10) -> 5
 function getRandomNumber(m, n) {
-    return (Math.random() * (m - n + 1) + n).toFixed(0);
+  return (Math.random() * (m - n + 1) + n).toFixed(0);
 }
-
-console.log(`Function return a random integer in the range N to M: ${getRandomNumber(1, 50)}`);
 
 // ---------------------------------------------------------------------------------------------------------------------------
 // 6.Створити функцію, яка рахує скільки разів певна буква повторюється в слові. Приклад: countLetter("а", "Асталавіста") -> 4
-function getcountLetter(str, a) {
+function getCountLetter(str, a) {
     let value = 0;
     for (i = 0; i < str.length; i++) {
         if (str.charAt(i).toLowerCase() == a) {
@@ -56,8 +46,6 @@ function getcountLetter(str, a) {
     }
     return value;
 }
-
-console.log(`Function return how many times a certain letter is repeated in a word: ${getcountLetter('blablablablablablablA', 'a')}`);
 
 // 7.Створіть функцію, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку. Приклад: convertCurrency("100$") -> 2500 грн. або convertCurrency("2500UAH") -> 100$ Врахуйте, інші валюти не конвертуються, потрібно виводити помилку, і також регістр uah не має значення.
 
@@ -76,8 +64,6 @@ function convertCurrency(value) {
   return value;
 }
 
-console.log(`Function corverts currency ${convertCurrency('100$')}`); 
-
 // ------------------------------------------------------------------------------------------------------------------------------------
 // 8.Створіть функцію генерації випадкового паролю (тільки числа), довжина встановлюється користувачем або по замовчуванню = 8 символам.
 // Приклад: getRandomPassword(4) -> 1875, getRandomPassword() -> 87240124
@@ -89,8 +75,6 @@ function getRandomPassword(n = '8') {
     }
     return pwd; 
   }
-  
-  console.log(`Function that return random password: ${getRandomPassword(4)}`);
 
 // ---------------------------------------------------------------------------------------------------------
 // 9.Створіть функцію, яка видаляє всі букви з речення. Приклад: deleteLetters('a', "blablabla") -> "blblbl"
@@ -103,8 +87,6 @@ function deleteLetters(a, str) {
     }
     return value;
   }
-  
-  console.log(`Function deletes selected letters: ${deleteLetters('a', 'It was realy beautiful day')}`);
 
 // --------------------------------------------------------------------------------------------------------------
 // 10.Створіть функцію, яка перевіряє, чи є слово паліндромом. Приклад: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false, isPalyndrom("Я несу гусеня") -> true
@@ -124,8 +106,6 @@ function isPalyndrom(str) {
   }
     return (strNew === value) ? true : false;
   }
-  
-  console.log(`Function checks if word is palidrom: ${isPalyndrom('Madam madam')}`);
 
 // -----------------------------------------------------------------------------------------------------------------------------------
 // 11.Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу. Приклад: deleteDuplicateLetter("Бісквіт був дуже ніжним") -> "сктдеим"
@@ -137,4 +117,60 @@ function deleteDuplicateLetter(str) {
   return uniqueChars;
 }
 
-console.log(`Function deletes duplicated letters: ${deleteDuplicateLetter('It was hard day for all')}`);
+// --------------------Call functions-----------------
+let btn1 = document.getElementById("btn1");
+btn1.addEventListener('click', event => {
+alert(getMaxDigit(6870));
+});
+
+let btn2 = document.getElementById("btn2");
+btn2.addEventListener('click', event => {
+alert(getNumberPow(3, 3));
+});
+
+let btn3 = document.getElementById("btn3");
+btn3.addEventListener('click', event => {
+alert(getFirstLetterUpperCase('cHARacTer'));
+});
+
+let btn4 = document.getElementById("btn4");
+btn4.addEventListener('click', event => {
+alert(getSalaryAfterTax(2000));
+});
+
+let btn5 = document.getElementById("btn5");
+btn5.addEventListener('click', event => {
+alert(getNumberPow(3, 3));
+});
+
+let btn6 = document.getElementById("btn6");
+btn6.addEventListener('click', event => {
+alert(getCountLetter('blablablablablablablA', 'a'));
+});
+
+let btn7 = document.getElementById("btn7");
+btn7.addEventListener('click', event => {
+alert('100$ = ' + convertCurrency('100$') + 'UAH');
+alert('3660UAH = ' + convertCurrency('3660UAH') + '$');
+});
+
+let btn8 = document.getElementById("btn8");
+btn8.addEventListener('click', event => {
+alert(getRandomPassword(8));
+});
+
+let btn9 = document.getElementById("btn9");
+btn9.addEventListener('click', event => {
+alert(deleteLetters('a', 'It was realy beautiful day'));
+});
+
+let btn10 = document.getElementById("btn10");
+btn10.addEventListener('click', event => {
+alert(isPalyndrom('Madam'));
+});
+
+let btn11 = document.getElementById("btn11");
+btn11.addEventListener('click', event => {
+alert(deleteDuplicateLetter('It was hard day for all'));
+});
+
