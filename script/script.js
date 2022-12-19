@@ -144,7 +144,11 @@ alert(convertCurrency(prompt('Enter your currency (e.g 100$ or 100UAH)')));
 
 let btn8 = document.getElementById("btn8");
 btn8.addEventListener('click', event => {
-alert(getRandomPassword(+prompt('Enter number how long your password should be (e.g. 8)')));
+let n = +prompt('Enter number how long your password should be (e.g. 8)');
+if (n !== ''){
+  n = 8;
+}
+alert(getRandomPassword(n));
 });
 
 let btn9 = document.getElementById("btn9");
