@@ -106,15 +106,6 @@ function isPalyndrom(str) {
     return (strNew === value) ? true : false;
   }
 
-// -----------------------------------------------------------------------------------------------------------------------------------
-// 11.Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу. Приклад: deleteDuplicateLetter("Бісквіт був дуже ніжним") -> "сктдеим"
-function deleteDuplicateLetter(str) {
-  str = str.toLowerCase().replace(/\s/g, '');
-  arr = Array.from(str);
-  let uniqueChars = [...new Set(arr)].join('');
-  return uniqueChars;
-}
-
 // -------------------------------------------------------------------------------------------------------------------------------------
 let btn1 = document.getElementById("btn1");
 btn1.addEventListener('click', event => {
@@ -166,8 +157,6 @@ btn10.addEventListener('click', event => {
 alert(isPalyndrom(prompt('Enter word (e.g. Madam)')));
 });
 
-let btn11 = document.getElementById("btn11");
-btn11.addEventListener('click', event => {
-alert(deleteDuplicateLetter(prompt('Enter sentence (e.g. It was realy beautiful day)')));
-});
+
+
 
