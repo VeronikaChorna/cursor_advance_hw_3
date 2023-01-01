@@ -10,9 +10,19 @@ function getMaxDigit(n) {
 // 2.Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **. Використовуйте цикл
 function getNumberPow(x, n) {
     let result = x;
-    for (let i = 1; i < n; i++) {
-      result *= x;
+    if (n > 0) {
+      for (let i = 1; i < n; i++) {
+        result *= x;
+      }
+    } else if (n < 0) {
+      for (let i = -1; i > n; i--) {
+        result *= x;
     }
+        result = 1 / result;
+    } else if (n === 0) {
+        result = 1;
+    }
+    
     return result;
   }
 
@@ -40,7 +50,7 @@ function getRandomNumber(m, n) {
 function getCountLetter(str, a) {
     let value = 0;
     for (i = 0; i < str.length; i++) {
-        if (str.charAt(i).toLowerCase() == a) {
+        if (str.charAt(i).toLowerCase() == a.toLowerCase()) {
             value += 1;
         }
     }
@@ -80,7 +90,7 @@ function getRandomPassword(n = '8') {
 function deleteLetters(a, str) {
     let value = '';
     for (i = 0; i < str.length; i++) {
-        if (str.charAt(i).toLowerCase() !== a) {
+        if (str.charAt(i).toLowerCase() !== a.toLowerCase()) {
         value += str.charAt(i);
         }
     }
@@ -107,42 +117,42 @@ function isPalyndrom(str) {
   }
 
 // -------------------------------------------------------------------------------------------------------------------------------------
-let btn1 = document.getElementById("btn1");
+const btn1 = document.getElementById("btn1");
 btn1.addEventListener('click', event => {
 alert(getMaxDigit(a = +prompt('Enter number (e.g 3609)')));
 });
 
-let btn2 = document.getElementById("btn2");
+const btn2 = document.getElementById("btn2");
 btn2.addEventListener('click', event => {
 alert(getNumberPow(+prompt('Enter number:'), +prompt('Enter number:')));
 });
 
-let btn3 = document.getElementById("btn3");
+const btn3 = document.getElementById("btn3");
 btn3.addEventListener('click', event => {
 alert(getFirstLetterUpperCase(prompt('Enter your word (e.g cHARacTer)')));
 });
 
-let btn4 = document.getElementById("btn4");
+const btn4 = document.getElementById("btn4");
 btn4.addEventListener('click', event => {
 alert(getSalaryAfterTax(+prompt('Enter salary (e.g 2000)')));
 });
 
-let btn5 = document.getElementById("btn5");
+const btn5 = document.getElementById("btn5");
 btn5.addEventListener('click', event => {
 alert(getRandomNumber(+prompt('Enter start number:'), +prompt('Enter end number:')));
 });
 
-let btn6 = document.getElementById("btn6");
+const btn6 = document.getElementById("btn6");
 btn6.addEventListener('click', event => {
 alert(getCountLetter(prompt('Enter your word (e.g blablablablablablablA)'), prompt('Enter single character that should be counted (e.g a)')));
 });
 
-let btn7 = document.getElementById("btn7");
+const btn7 = document.getElementById("btn7");
 btn7.addEventListener('click', event => {
 alert(convertCurrency(prompt('Enter your currency (e.g 100$ or 100UAH)')));
 });
 
-let btn8 = document.getElementById("btn8");
+const btn8 = document.getElementById("btn8");
 btn8.addEventListener('click', event => {
 let n = +prompt('Enter number how long your password should be (e.g. 8)');
 if (n !== ''){
@@ -151,12 +161,12 @@ if (n !== ''){
 alert(getRandomPassword(n));
 });
 
-let btn9 = document.getElementById("btn9");
+const btn9 = document.getElementById("btn9");
 btn9.addEventListener('click', event => {
 alert(deleteLetters(prompt('Enter single letter that should be deleted (e.g. a)'), prompt('Enter sentence (e.g. It was realy beautiful day)')));
 });
 
-let btn10 = document.getElementById("btn10");
+const btn10 = document.getElementById("btn10");
 btn10.addEventListener('click', event => {
 alert(isPalyndrom(prompt('Enter word (e.g. Madam)')));
 });
